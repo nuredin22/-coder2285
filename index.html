@@ -66,22 +66,33 @@ I am a dedicated student with a strong passion for computer science and software
     <button id="dislike-button" class="dislike-button" onclick="handleClick('dislike')">👎 Dislike <span id="dislike-count">0</span></button>
 </div>
 <script>
-let likeCount = 0;
-let dislikeCount = 0;
-let hasClicked = false;
+let likeCount = localStorage.getItem('likeCount') ? parseInt(localStorage.getItem('likeCount')) : 0;
+let dislikeCount = localStorage.getItem('dislikeCount') ? parseInt(localStorage.getItem('dislikeCount')) : 0;
+
+document.getElementById('like-count').textContent = likeCount;
+document.getElementById('dislike-count').textContent = dislikeCount;
+
 function handleClick(action) {
-    if (!hasClicked) {
-        hasClicked = true;
-        if (action === 'like') {
-            likeCount++;
-            document.getElementById('like-count').textContent = likeCount;
-        } else if (action === 'dislike') {
-            dislikeCount++;
-            document.getElementById('dislike-count').textContent = dislikeCount;
-        }
-        document.getElementById('like-button').disabled = true;
-        document.getElementById('dislike-button').disabled = true;
+    if (localStorage.getItem('userVote')) {
+        alert("You can only vote once.");
+        return;
     }
+
+    if (action === 'like') {
+        likeCount++;
+        localStorage.setItem('likeCount', likeCount);
+    } else if (action === 'dislike') {
+        dislikeCount++;
+        localStorage.setItem('dislikeCount', dislikeCount);
+    }
+
+    localStorage.setItem('userVote', action);
+    document.getElementById('like-count').textContent = likeCount;
+    document.getElementById('dislike-count').textContent = dislikeCount;
+
+    // Disable both buttons
+    document.getElementById('like-button').disabled = true;
+    document.getElementById('dislike-button').disabled = true;
 }
 </script>
 </body>

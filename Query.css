@@ -1,0 +1,114 @@
+@media (max-width: 768px) {
+  .nav-links {
+  position: fixed;
+  top: 50px;
+  
+  right: -100%;
+  height: 100vh;
+  width: 200px;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  
+  transition: right 0.3s ease;
+  }
+  
+  .nav-links.active {
+  right: 0;
+  }
+  
+.navbar .hamburger{
+  display:flex;
+  }
+  
+.home-section {
+
+        flex-direction: column;
+
+        text-align: center;
+}   
+    
+    .content, .image-container {
+        max-width: 100%;
+        flex: none;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .buttons .btn {
+        display: block;
+        margin: 10px auto;
+    }
+    
+    .social-icons a {
+        font-size: 1.2rem;
+    }
+
+    .skill-section{
+        flex-direction: column;
+    }
+    
+    
+    .about-container {
+
+      flex-direction: column;
+
+      align-items: flex-start;
+    }
+    .about-text {
+        text-align: left;
+      }
+    
+      .about-image {
+        order: 2;
+      }
+    
+      .about-text {
+        order: 1;
+        margin-bottom: 20px;
+      }
+
+      .certificate-card {
+        width: 100%;
+        }
+        
+        
+         .box-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-box {
+        width: 80%;
+        margin: 20px 0;
+    }
+}
+
+  
+}
+
+
+
+ .footer-col {
+        flex: 1 1 45%; /* Stack columns at 45% on tablets */
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-col {
+        flex: 1 1 100%; /* Stack columns at 100% on mobile */
+        text-align: center; /* Center align text on small screens */
+    }
+
+    .footer-bottom p {
+        font-size: 0.9rem;
+    }
+}
+
+
+

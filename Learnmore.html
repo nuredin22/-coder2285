@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+body{
+  background-color: #1f242d;
+  padding: 0px 20px;
+}
+  h2{
+    text-align: center;
+    color: #ffae00;
+    
+  }
+  p{
+    color: white;
+    text-align: justify;
+    line-height: 1.4;
+  }
+  
+  
+
+span{
+
+      background:linear-gradient(45deg ,#df8908 10%, #ff1d15 100%);
+      background-clip: text;
+      color: transparent;
+      font-family: var(--font-family);
+      font-size: 2rem;
+}
+
+.like-dislike-container{
+  display: flex;
+  text-align: center;
+  margin-top: 50px;
+}
+button {
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin:
+    transition: background-color 0.3s ease;
+    background:#1f242d;
+    box-shadow:  0 0 1rem grey;
+    }
+  .like-button:hover {
+    background-color: #123456;
+  }
+.dislike-button:hover {
+    background-color: #abcdef;
+    }
+    
+</style>
+</head>
+<body>
+    <h2>Read it</h2>
+    <p>
+I am a dedicated student with a strong passion for computer science and software engineering. Driven by curiosity and a desire to create, I have taken the initiative to teach myself several programming languages, including HTML, CSS, JavaScript, and Python. Along the way, I have developed skills in both front-end and back-end development, and I continue to seek out opportunities to deepen my understanding of coding principles and best practices. Beyond just learning languages, I enjoy building projects that bring my ideas to life, from simple web pages to more complex applications. My goal is to use technology to solve real-world problems, and I am always eager to take on new challenges that help me grow as a developer and broaden my knowledge in this ever-evolving field.
+</p>
+<div class="like-dislike-container">
+    <button id="like-button" class="like-button" onclick="handleClick('like')">👍 Like <span id="like-count">0</span></button>
+    
+    <h1><span>Nuredin</span></h1>
+    <button id="dislike-button" class="dislike-button" onclick="handleClick('dislike')">👎 Dislike <span id="dislike-count">0</span></button>
+</div>
+<script>
+let likeCount = 0;
+let dislikeCount = 0;
+let hasClicked = false;
+function handleClick(action) {
+    if (!hasClicked) {
+        hasClicked = true;
+        if (action === 'like') {
+            likeCount++;
+            document.getElementById('like-count').textContent = likeCount;
+        } else if (action === 'dislike') {
+            dislikeCount++;
+            document.getElementById('dislike-count').textContent = dislikeCount;
+        }
+        document.getElementById('like-button').disabled = true;
+        document.getElementById('dislike-button').disabled = true;
+    }
+}
+</script>
+</body>
+</html>
